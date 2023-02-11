@@ -1,9 +1,9 @@
 import propTypes from 'prop-types';
 import css from './ContactList.module.css';
-import { deleteContacts } from 'redux/operations';
+import { deleteContacts } from 'redux/contacts/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 
 const ContactItem = ({ idx, name, number, onRemove }) => {
   return (

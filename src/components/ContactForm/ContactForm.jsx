@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { addContacts } from 'redux/operations';
+import { addContacts } from 'redux/contacts/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import propTypes from 'prop-types';
