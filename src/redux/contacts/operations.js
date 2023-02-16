@@ -1,46 +1,40 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+axios.defaults.baseURL = 'https://63d9f71c2af48a60a7c2c17d.mockapi.io/contacts';
 
-export const contactsAsyncThunk = createAsyncThunk(
+export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, thunkAPI) => {
     try {
-      const { data } = await axios.get('/contacts');
-      return data;
-    } catch (error) {
-      toast.error('Error');
-      return thunkAPI.rejectWithValue(error);
+      const response = await axios.get('/contacts');
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
-
 export const addContacts = createAsyncThunk(
   'contacts/addContact',
-  async ({ name, number }, thunkAPI) => {
+  async (newItem, thunkAPI) => {
     try {
-      const { data } = await axios.post('/contacts', { name, number });
-      toast.info(`${data.name} added to contacts.`);
-      return data;
-    } catch (error) {
-      toast.error('Error');
-      return thunkAPI.rejectWithValue(error);
+      const response = await axios.post('/contacts', newItem);
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );
-
-export const deleteContacts = createAsyncThunk(
+export const removeContacts = createAsyncThunk(
   'contacts/deleteContact',
-  async (contactId, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
-      const { data } = await axios.delete(`/contacts/${contactId}`);
-      toast.info(`${data.name} removed from contacts.`);
-      return data;
-    } catch (error) {
-      toast.error('Error');
-      return thunkAPI.rejectWithValue(error);
+      const response = await axios.delete(`/contacts/${id}`, {
+        params: { id },
+      });
+      return response.data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
     }
   }
 );

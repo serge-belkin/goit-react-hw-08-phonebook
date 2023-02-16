@@ -1,20 +1,31 @@
-import React from 'react';
 import css from './Filter.module.css';
-import { useDispatch } from 'react-redux';
-import { setQuery } from "../../redux/contacts/contacts.slice";
+import { PropTypes } from 'prop-types';
+import { setStatusFilter } from 'redux/filterSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
 export const Filter = () => {
-
   const dispatch = useDispatch();
-
-  const onChangeFilter = (query) => {
-    dispatch(setQuery(query))
-  }
+  const filter = useSelector(state => state.filter.status);
+  const handleFilter = e => {
+    dispatch(setStatusFilter(e.currentTarget.value.toLowerCase()));
+  };
   return (
-    <label htmlFor="">
-      Find contacts by name
-      <input type="text" onChange={(e) => onChangeFilter(e.target.value)} />
-    </label>
-  )
+    <>
+      <label className={css.title}>
+        Find contacts by name
+        <input
+          className={css.input}
+          type="text"
+          value={filter}
+          onChange={handleFilter}
+        />
+      </label>
+    </>
+  );
+};
+
+Filter.propTypes = {
+  onChange: PropTypes.func,
+  value: PropTypes.string,
 };
 
