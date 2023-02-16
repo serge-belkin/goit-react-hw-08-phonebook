@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.username {
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #E0E1DD;
+  cursor: pointer;
+}
+
+.container button:hover {
+  background-color: #9c9d9a;
+}

@@ -6,11 +6,12 @@ const HomePage = () => {
     title: {
       with: '100%',
       textAlign: 'center',
+      color: '#1B263B',
     },
   };
   return (
     <div style={css.container}>
-      <h1 style={css.title}>Welcome page for Phone Book</h1>
+      <h1 style={css.title}>Welcome to your Phone Book</h1>
 
     </div>
   );

@@ -14,7 +14,7 @@ export const LoginForm = () => {
     );
   };
   return (
-    <div className={css.formContainer}>
+    <div className={css.container}>
       <header className={css.header}>Login</header>
       <form className={css.form} onSubmit={handleSubmit}>
         <input
@@ -33,7 +33,6 @@ export const LoginForm = () => {
         />
         <button type="submit">Login</button>
       </form>
-      <div className={css.figure}></div>
     </div>
   );
 };

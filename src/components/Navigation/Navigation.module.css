@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.link {
+  text-decoration: none;
+  color: #E0E1DD;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.link_title {
+  color: #E0E1DD;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+}

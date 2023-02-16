@@ -15,8 +15,8 @@ export const RegisterForm = () => {
     );
   };
   return (
-    <div className={css.form_container}>
-      <header className={css.header}>Signup</header>
+    <div className={css.container}>
+      <header className={css.header}>Sign up</header>
       <form className={css.form} onSubmit={handleSubmit}>
         <input
           name="name"
@@ -41,7 +41,6 @@ export const RegisterForm = () => {
         />
         <button type="submit">Signup</button>
       </form>
-      <div className={css.figure}></div>
     </div>
   );
 };
