@@ -39,7 +39,7 @@ export const RegisterForm = () => {
           autoComplete="off"
           required
         />
-        <button type="submit">Signup</button>
+        <button type="submit">Sign up</button>
       </form>
     </div>
   );
