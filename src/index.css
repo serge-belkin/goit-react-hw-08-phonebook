@@ -13,3 +13,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* styled Remove confirm window */
+.notiflix-confirm-content{
+  border: 2px solid;
+}
